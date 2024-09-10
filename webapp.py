@@ -1,4 +1,4 @@
-
+import io
 import streamlit as st
 import numpy as np
 from PIL import Image 
@@ -8,6 +8,8 @@ import tensorflow as tf
 from tempfile import NamedTemporaryFile
 from tensorflow.keras.preprocessing import image 
 
+uploaded_file = st.file_uploader(...)
+text_io = io.TextIOWrapper(uploaded_file)
 st.set_option('deprecation.showfileUploaderEncoding', False)
 @st.cache(allow_output_mutation=True)
 
